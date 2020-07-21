@@ -1,0 +1,61 @@
+---
+    training_set:
+      - training_log:
+          log: "May 14 05:47:19 tor01.ra1.dal Ebra: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet28 (UPLINK) changed state to up"
+          entities:
+              - {start: 0, end: 15, label: "TIME"}
+              - {start: 16, end: 29, label: "DEVICE"}
+              - {start: 37, end: 55, label: "FACILITY"}
+              - {start: 84, end: 94, label: "INTERFACE"}
+              - {start: 96, end: 122, label: "INTERFACE-DESCRIPTION"}
+              - {start: 123, end: 130, label: "ACTION"}
+              - {start: 140, end: 142, label: "STATE"}
+  
+      - training_log:
+          log: "May 14 05:47:19 sw-1.ra2.atl PortSec: %ETH-4-HOST_FLAPPING: Host ff:ff:ff:ff:ff:ff in VLAN 2439 is flapping between interface Port-Channel444 and interface Port-Channel11 (message repeated 12 times in 5.00024 secs)"
+          entities:
+              - {start: 0, end: 15, label: "TIME"}
+              - {start: 16, end: 28, label: "DEVICE"}
+              - {start: 39, end: 58, label: "FACILITY"}
+              - {start: 86, end: 95, label: "VLAN"}
+              - {start: 99, end: 107, label: "ACTION"}
+              - {start: 131, end: 141, label: "INTERFACE"}
+              - {start: 156, end: 166, label: "INTERFACE"}
+  
+      - training_log:
+          log: "May 14 05:47:20 sw-2.ra4.atl Ebra: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet9 changed state to up"
+          entities:
+              - {start: 0, end: 15, label: "TIME"}
+              - {start: 16, end: 28, label: "DEVICE"}
+              - {start: 36, end: 54, label: "FACILITY"}
+              - {start: 83, end: 92, label: "INTERFACE"}
+              - {start: 93, end: 107, label: "ACTION"}
+              - {start: 111, end: 113, label: "STATE"}
+
+      - training_log:
+          log: "Jul 6 03:45:22 router1.fac4 Pmbus: %HARDWARE-4-POWER_SUPPLY_FAN_FAILURE_WARNING: Power supply 1 fan failure predicted."
+          entities:
+              - {start: 0, end: 14, label: "TIME"}
+              - {start: 15, end: 27, label: "DEVICE"}
+              - {start: 36, end: 79, label: "FACILITY"}
+              - {start: 81, end: 99, label: "HARDWARE"}
+              - {start: 100, end: 107, label: "ACTION"}
+
+      - training_log:
+          log: "Jul 6 03:45:27 sw-1-buil5-ca6 Thermostat: %ENVMON-3-FANFAILED: FanP1/1 failure detected"
+          entities:
+              - {start: 0, end: 14, label: "TIME"}
+              - {start: 15, end: 29, label: "DEVICE"}
+              - {start: 43, end: 61, label: "FACILITY"}
+              - {start: 63, end: 70, label: "HARDWARE"}
+              - {start: 71, end: 78, label: "ACTION"}
+
+      - training_log:
+          log: "Jul 6 06:02:46 tor2.campus6 Fru: %FRU-6-POWERSUPPLY_REMOVED: Power Supply in slot 1 has been removed"
+          entities:
+              - {start: 0, end: 14, label: "TIME"}
+              - {start: 15, end: 27, label: "DEVICE"}
+              - {start: 34, end: 59, label: "FACILITY"}
+              - {start: 61, end: 73, label: "HARDWARE"}
+              - {start: 77, end: 83, label: "HARDWARE"}
+              - {start: 93, end: 100, label: "ACTION"}
