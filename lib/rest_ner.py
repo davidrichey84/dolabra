@@ -1,12 +1,15 @@
+import sys
 import gunicorn.app.base
 import falcon
-import json
+import ujson
+import spacy
 
 class Classify(object):
     def __init__(self):
         model = 'utilities/syslog_ner.model'
         try:
             self.ner_model = spacy.load(model)
+            #results = 1 + 1
         except:
             print("Could not locate model!")
             sys.exit(1)
@@ -46,11 +49,13 @@ class StandaloneApplication(gunicorn.app.base.BaseApplication):
 
 class REST(object):
     def __init__(self, params):
+        params = params.__dict__
+        print(params)
         bind_info = params['bind'].split(":")
         int_bind = bind_info[0]
         port_bind = bind_info[1]
-        workers = params['workers', 2]
-        options = {'bind': '%s:%s' % (int_bind, port_bind), 'workers': %s % (workers)}
+        workers = params.get('gun_workers', 2)
+        options = {'bind': '%s:%s' % (int_bind, port_bind), 'workers': '%d' % (int(workers))}
         app = falcon.API()
         classify_log = Classify()
         app.add_route('/api/classify', classify_log)
