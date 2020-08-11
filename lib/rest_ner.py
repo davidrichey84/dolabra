@@ -15,6 +15,9 @@ class Classify(object):
             sys.exit(1)
 
     def on_get(self, req, resp):
+        """Function to handle HTTP GET
+
+        """
         payload = req.media
         try:
             classify_log = ''

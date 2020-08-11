@@ -1,7 +1,7 @@
 import sys
 from argparse import ArgumentParser
 import logging
-#from lib import kafka_ner
+from lib import kafka_ner
 from lib import rest_ner
 
 
