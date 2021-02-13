@@ -1,0 +1,12 @@
+[tool.poetry]
+name = "dolabra"
+version = "0.1.0"
+description = "NER powered network device syslog parser"
+authors = ["David Richey"]
+
+[tool.poetry.dependencies]
+python = "^3.8.2"
+fastapi = "^0.63.0"
+ujson = "^4.0.2"
+tqdm = "^4.56.2"
+spacy = "^3.0.1"
