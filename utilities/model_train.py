@@ -26,8 +26,9 @@ def create_training_set(json_training_data):
 
 def add_ner_pipe_to_model(ner_model, training_data):
     if 'ner' not in ner_model.pipe_names:
-        ner_pipe = ner_model.create_pipe('ner')
-        ner_model.add_pipe(ner_pipe, last=True)
+        #ner_pipe = ner_model.create_pipe('ner')
+        ner_pipe = ner_model.add_pipe('ner')
+        #ner_model.add_pipe(ner_pipe, last=True)
 
         for _, annotations in training_data:
             for ent in annotations.get('entities'):
@@ -56,14 +57,18 @@ if __name__ == "__main__":
     print("Created new blank model")
     json_training_data = read_yaml('syslog1.yaml')
     training_data = create_training_set(json_training_data)
-    ner_pipe, ner_updated_model = add_ner_pipe_to_model(ner_model, training_data)
-    ner_final_model = train_model(ner_updated_model, training_data)
-    print("All done!\n")
-    for text, _ in training_data:
-        doc = ner_final_model('May 14 05:47:20 tor01.r1.dal PortSec: %ETH-4-HOST_FLAPPING: Host ff:00:ff:00:ff:00 in VLAN 1900 is flapping between interface Port-Channel555 and interface Ethernet37 (message repeated 23 times in 5.51062 secs)')
-        print("Entities", [(ent.text, ent.label_) for ent in doc.ents])
-
-    ner_final_model.to_disk('syslog_ner.model')
+    #ner_pipe, ner_updated_model = add_ner_pipe_to_model(ner_model, training_data)
+    #ner_final_model = train_model(ner_updated_model, training_data)
+    #print("All done!\n")
+    #for text, _ in training_data:
+    #    doc = ner_final_model('May 14 05:47:20 tor01.r1.dal PortSec: %ETH-4-HOST_FLAPPING: Host ff:00:ff:00:ff:00 in VLAN 1900 is flapping between interface Port-Channel555 and interface Ethernet37 (message repeated 23 times in 5.51062 secs)')
+    #    print("Entities", [(ent.text, ent.label_) for ent in doc.ents])
+#
+    #ner_final_model.to_disk('syslog_ner.model')
+    print(json.dumps(training_data))
+    f = open('json_training.json', 'w')
+    f.write(json.dumps(training_data))
+    f.close()
 
 
 
