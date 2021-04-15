@@ -1,0 +1,44 @@
+[
+   [
+     "May 14 05:47:19 tor01.ra1.dal Ebra: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet28 (UPLINK) changed state to up",
+     {
+         "entities": [
+            [
+               0,
+               15,
+               "TIME"
+            ],
+            [
+               16,
+               29,
+               "DEVICE"
+            ],
+            [
+               37,
+               55,
+               "FACILITY"
+            ],
+            [
+               84,
+               94,
+               "INTERFACE"
+            ],
+            [
+               96,
+               122,
+               "INTERFACE-DESCRIPTION"
+            ],
+            [
+               123,
+               130,
+               "ACTION"
+            ],
+            [
+               140,
+               142,
+               "STATE"
+            ]
+        ]
+     }
+   ]
+]
