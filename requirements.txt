@@ -21,4 +21,4 @@ tqdm==4.48.0
 ujson==3.0.0
 urllib3==1.25.9
 wasabi==0.7.1
-wheel==0.34.2
+wheel==0.38.1
